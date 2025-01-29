@@ -1,0 +1,59 @@
+@media only screen and (max-width: 768px) {
+
+    /* body{
+        width: 120%;
+    } */
+
+    .svg{
+        max-width: 70% !important;
+        object-fit: contain;
+    }
+
+    .p1-content{
+        grid-template-columns: none !important;
+        grid-template-rows: 1fr 8fr 8fr;
+    }
+
+    .p2-content{
+        grid-template-columns: none !important;
+        grid-template-rows: 1fr 1fr 1fr; 
+    }
+
+    #send_next, #move_window, #resend{
+        font-size: x-small;
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 50%;
+        padding: 0px !important;
+    }
+
+    .p2-btn-container{
+        margin: 2% !important;
+        display: grid !important;
+        grid-template-columns: 2fr 2fr 3fr !important;
+        grid-template-rows:none !important;
+        height: 40px !important;
+    }
+
+    .p2-canvas-container{
+        width: 80vw !important;
+        height: 40vh !important;
+    }
+
+    .p2-btn-div{
+        height: 40px !important;
+    }
+
+    #timer{
+        font-size: 20px !important;
+    }
+
+    .p2-canvas{
+        width: 67vw !important;
+    }
+
+    .p2-log, .p1-log{
+        height: 150px !important;
+    }
+    
+}
