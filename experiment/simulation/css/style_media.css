@@ -22,21 +22,37 @@
         grid-template-columns: none !important;
         grid-template-rows: 0.7fr 1fr 1fr; 
     }
+    .p4-content{
+        grid-template-columns: none !important;
+        grid-template-rows: 0.7fr 1fr 1fr; 
+    }
 
     #send_next, #move_window, #resend{
         font-size: x-small;
-        width: 40px !important;
-        height: 40px !important;
+        width: 45px !important;
+        height: 45px !important;
         border-radius: 50%;
         padding: 0px !important;
     }
 
+    .p4-btn-div #resend{
+        line-height: 100%;
+    }
     .p2-btn-container{
+        margin: 2% !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        grid-template-rows:none !important;
+        height: 40px !important;
+        width: 80vw !important;
+    }
+    .p4-btn-container{
         margin: 2% !important;
         display: grid !important;
         grid-template-columns: 2fr 2fr 3fr !important;
         grid-template-rows:none !important;
-        height: 40px !important;
+        height: 60px !important;
+        width: 80vw !important;
     }
 
     .p2-canvas-container{
@@ -49,6 +65,14 @@
     .p2-btn-div{
         height: 40px !important;
     }
+    .p4-btn-div{
+        height: 40px !important;
+    }
+
+    .p4-resend-div{
+        display: flex !important;
+        flex-direction: column-reverse !important;
+    }
 
     #timer{
         font-size: 20px !important;
@@ -57,14 +81,21 @@
     .p2-canvas{
         width: 67vw !important;
     }
+    .p4-canvas{
+        width: 67vw !important;
+    }
 
-    .p2-log, .p1-log{
+    .p2-log, .p1-log, .p4-log{
         height: 150px !important;
     }
 
     #p2-btn-window-container{
         flex-direction: column !important;
         justify-content: flex-start !important;
+    }
+    #p4-btn-window-container{
+        flex-direction: column-reverse !important;
+        justify-content: flex-end !important;
     }
 
     .p3-content{

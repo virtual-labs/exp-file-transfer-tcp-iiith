@@ -228,7 +228,7 @@ hr{
   grid-template-rows: repeat(3, 1fr);
 }
 
-.p2-content{
+.p2-content, .p4-content{
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
 }

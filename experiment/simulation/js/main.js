@@ -2,15 +2,22 @@ if (document.title == "Stop and Wait") {
   var div_content = document.querySelector(".p1-content");
   var doc_width = div_content.offsetWidth;
 }
-else if(document.title == "GBN - Sender"){
+else if(document.title == "GBN - Sender" || document.title == "Slow-Start"){
   var div_content = document.querySelector(".p2-content");
   var doc_width = div_content.offsetWidth;
 }
 else if(document.title == "3 way handshake"){
   var div_content = document.querySelector(".p3-content");
   var doc_width = div_content.offsetWidth;
-
 }
+else if(document.title == "3 way handshake" || document.title == "TCP Closure"){
+  var div_content = document.querySelector(".p3-content");
+  var doc_width = div_content.offsetWidth;
+}
+// else if(document.title == "Slow-Start"){
+//   var div_content = document.querySelector(".p4-content");
+//   var doc_width = div_content.offsetWidth;
+// }
 
 const length = doc_width > 770 ? 350 : doc_width*0.7;
 const graphWidth = length;
@@ -501,7 +508,7 @@ async function doublePkt(idx, send_len, ret_len, pkt_no, ack_no) {
     // console.log(ack_reached);
     await delay(2000, 1);
     // console.log(ack_reached);
-    ack_reached = ret_len == 350;
+    ack_reached = ret_len == graphWidth;
     // console.log(ack_reached);
 
   if (document.title == "GBN - Sender") {
@@ -896,7 +903,7 @@ async function p4_button_press(type) {
 
   }
 
-  logEntry(`${ray_counter} - s: ${window_start}; ls: ${last_pkt_sent}; lar: ${last_ack_received};`);
+  // logEntry(`${ray_counter} - s: ${window_start}; ls: ${last_pkt_sent}; lar: ${last_ack_received};`);
 
 
   for (var i = 1; i <= p4_maxPkt; i++) {
@@ -1111,7 +1118,7 @@ async function p5_button_press(type){
     else logEntry("!!!Invalid decrease in window size!!!");
   }
 
-  logEntry(`${ray_counter} - s: ${window_start}; ls: ${last_pkt_sent}; lar: ${last_ack_received};`);
+  // logEntry(`${ray_counter} - s: ${window_start}; ls: ${last_pkt_sent}; lar: ${last_ack_received};`);
 
 
   for (var i = 1; i <= p5_maxPkt; i++) {
@@ -1298,7 +1305,7 @@ async function p7_button_press(type) {
     }
 
   
-    logEntry(`${ray_counter} - s: ${window_start}; ls: ${last_pkt_sent}; lar: ${last_ack_received};`);
+    // logEntry(`${ray_counter} - s: ${window_start}; ls: ${last_pkt_sent}; lar: ${last_ack_received};`);
 
     for (var i = 1; i <= c_maxPkt; i++) {
       pkt_head[i - 1].className = "";
@@ -1548,7 +1555,7 @@ async function p7_button_press(type) {
 
 
 
-    logEntry(`${ray_counter} - s: ${window_start}; ls: ${last_pkt_sent}; lar: ${last_ack_received};`);
+    // logEntry(`${ray_counter} - s: ${window_start}; ls: ${last_pkt_sent}; lar: ${last_ack_received};`);
 
 
     for (var i = 1; i <= p7_maxPkt; i++) {
@@ -1623,6 +1630,15 @@ function get_window() {
   }
 
   if (document.title == "Stop and Wait" || document.title == "3 way handshake") return;
+  if (document.title == "Slow-Start"){
+    for (var i = 1; i <= p4_maxPkt; i++) {
+      if (i == window_start) pkt_head[i - 1].className += "window-start ";
+      if (i == window_end) pkt_head[i - 1].className += "window-end ";
+      if (i > window_start && i < window_end) pkt_head[i - 1].className += "window-inside ";
+      else pkt_head[i - 1].className += "";
+    }
+    return;
+  }
   for (var i = 1; i <= p2_maxPkt; i++) {
     if (i == window_start) pkt_head[i - 1].className += "window-start ";
     if (i == window_end) pkt_head[i - 1].className += "window-end ";
