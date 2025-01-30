@@ -663,8 +663,7 @@ async function p1_sendPacket() {
     logEntry("Packet is still in transit");
     return;
   }
-  success = 1;
-  // success = getRandom(0.6);
+  success = getRandom(0.6);
   sending = 1;
   await callAnimateRay(1, success);
   sending = 0;
@@ -674,8 +673,7 @@ async function p1_sendPacket() {
   } else {
     logEntry("Client's packet reached server");
   }
-  returnSuccess = 0;
-  // returnSuccess = getRandom(0.6);
+  returnSuccess = getRandom(0.6);
   receiving = 1;
   await callAnimateRay(0, returnSuccess);
   receiving = 0;
