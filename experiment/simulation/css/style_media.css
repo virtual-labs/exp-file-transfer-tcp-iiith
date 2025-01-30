@@ -20,7 +20,7 @@
 
     .p2-content{
         grid-template-columns: none !important;
-        grid-template-rows: 1fr 1fr 1fr; 
+        grid-template-rows: 0.7fr 1fr 1fr; 
     }
 
     #send_next, #move_window, #resend{
