@@ -114,13 +114,13 @@ input {
 
 }
 
-.log-div{
-  /* overflow-y: hidden;  */
+/* .log-div{
+  /* overflow-y: hidden;  
   height:180px; 
   background-color: rgb(160, 212, 255) !important;
-  /* padding-right: 14px; */
+  /* padding-right: 14px; 
   
-}
+} */
 
 .p3-button-div{
   display: flex;

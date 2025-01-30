@@ -14,6 +14,10 @@
         grid-template-rows: 1fr 8fr 8fr;
     }
 
+    .p1-canvas-container{
+        border: 1px solid black !important;
+    }
+
     .p2-content{
         grid-template-columns: none !important;
         grid-template-rows: 1fr 1fr 1fr; 
@@ -39,6 +43,7 @@
         width: 80vw !important;
         height: 40vh !important;
         scrollbar-width: none !important;
+        border: 1px solid black !important;
     }
 
     .p2-btn-div{
@@ -60,6 +65,57 @@
     #p2-btn-window-container{
         flex-direction: column !important;
         justify-content: flex-start !important;
+    }
+
+    .p3-content{
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    #p3-sender-btns{
+        display: flex !important;
+        order: 1;
+        flex-direction: row !important;
+        justify-content: space-between;
+    }
+    #p3-sender-btns-outer{
+        display: flex !important;
+        /* order: 1; */
+        flex-direction: row !important;
+        justify-content: space-between;
+    }
+    
+    #p3-receiver-btns{
+        display: flex !important;
+        order: 2;
+        flex-direction: row !important;
+        justify-content: space-between;
+
+    }
+    #p3-receiver-btns-outer{
+        display: flex !important;
+        /* order: 2; */
+        flex-direction: row !important;
+        justify-content: space-between;
+
+    }
+
+    .p3-btn{
+        width: 60px !important;
+        font-size: small !important;
+        padding: 0px !important;
+        justify-self: end;
+        border-radius: 10% !important;
+    }
+
+    #p3-diagram{
+        order: 3;
+    }
+
+    .canvas-div{
+        margin: 5% !important;
+        height: 25vh !important;
+        border: 1px solid black !important;
     }
     
 }

@@ -6,6 +6,11 @@ else if(document.title == "GBN - Sender"){
   var div_content = document.querySelector(".p2-content");
   var doc_width = div_content.offsetWidth;
 }
+else if(document.title == "3 way handshake"){
+  var div_content = document.querySelector(".p3-content");
+  var doc_width = div_content.offsetWidth;
+
+}
 
 const length = doc_width > 770 ? 350 : doc_width*0.7;
 const graphWidth = length;
@@ -34,8 +39,6 @@ function addGraphTitles(){
 
   div.appendChild(titles);
 }
-
-window.addEventListener("click",addGraphTitles);
 
 let sending = 0;
 let receiving = 0;
@@ -1619,7 +1622,7 @@ function get_window() {
     }
   }
 
-  if (document.title == "Stop and Wait") return;
+  if (document.title == "Stop and Wait" || document.title == "3 way handshake") return;
   for (var i = 1; i <= p2_maxPkt; i++) {
     if (i == window_start) pkt_head[i - 1].className += "window-start ";
     if (i == window_end) pkt_head[i - 1].className += "window-end ";
