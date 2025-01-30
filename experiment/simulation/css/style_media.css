@@ -18,25 +18,28 @@
         border: 1px solid black !important;
     }
 
-    .p2-content{
+    .p2-content, .p4-content{
         grid-template-columns: none !important;
         grid-template-rows: 0.7fr 1fr 1fr; 
     }
-    .p4-content{
+
+    .p5-content{
         grid-template-columns: none !important;
-        grid-template-rows: 0.7fr 1fr 1fr; 
+        grid-template-rows: 0.8fr 1fr 1fr; 
     }
 
     #send_next, #move_window, #resend{
         font-size: x-small;
-        width: 45px !important;
-        height: 45px !important;
+        width: 40px !important;
+        height: 40px !important;
         border-radius: 50%;
         padding: 0px !important;
     }
 
-    .p4-btn-div #resend{
+    .p4-btn-div#send_next, .p4-btn-div#move_window, .p4-btn-div#resend{
         line-height: 100%;
+        width: 45px !important;
+        height: 45px !important;
     }
     .p2-btn-container{
         margin: 2% !important;
@@ -45,6 +48,7 @@
         grid-template-rows:none !important;
         height: 40px !important;
         width: 80vw !important;
+        align-items: center;
     }
     .p4-btn-container{
         margin: 2% !important;
@@ -63,7 +67,10 @@
     }
 
     .p2-btn-div{
-        height: 40px !important;
+        height: 50px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-around;
     }
     .p4-btn-div{
         height: 40px !important;
@@ -141,6 +148,11 @@
 
     #p3-diagram{
         order: 3;
+    }
+
+    .p5-bottom{
+        border-bottom: 1px solid black !important;
+        border-top: 1px solid black !important;
     }
 
     .canvas-div{

@@ -6,18 +6,14 @@ else if(document.title == "GBN - Sender" || document.title == "Slow-Start"){
   var div_content = document.querySelector(".p2-content");
   var doc_width = div_content.offsetWidth;
 }
-else if(document.title == "3 way handshake"){
-  var div_content = document.querySelector(".p3-content");
-  var doc_width = div_content.offsetWidth;
-}
 else if(document.title == "3 way handshake" || document.title == "TCP Closure"){
   var div_content = document.querySelector(".p3-content");
   var doc_width = div_content.offsetWidth;
 }
-// else if(document.title == "Slow-Start"){
-//   var div_content = document.querySelector(".p4-content");
-//   var doc_width = div_content.offsetWidth;
-// }
+else if(document.title == "AIMD"){
+  var div_content = document.querySelector(".p5-content");
+  var doc_width = div_content.offsetWidth;
+}
 
 const length = doc_width > 770 ? 350 : doc_width*0.7;
 const graphWidth = length;
@@ -155,7 +151,8 @@ function animateRay(startX, startY, angle, length, ack = 0) {
   // Animate the ray
   function animate() {
     // Calculate the new position of the ray
-    progress += 0.02;
+    // var progress_increment = doc_width > 770 ? 0.02 : 0.08;
+    progress += 0.1;
     if (progress > 1) {
       progress = 1;
     }
@@ -237,7 +234,8 @@ async function doublePkt(idx, send_len, ret_len, pkt_no, ack_no) {
     var currentX = startX;
     var currentY = startY;
 
-    progress += 0.01;
+    progress_incrementor = doc_width > 770 ? 0.02 : 0.04;
+    progress += progress_incrementor; // Makes difference to send ray
     // delay(10000);
     if (progress > 1) {
       progress = 1;
@@ -305,8 +303,8 @@ async function doublePkt(idx, send_len, ret_len, pkt_no, ack_no) {
 
     var currentX2 = startX20;
     var currentY2 = startY20;
-
-    progress2 += 0.01;
+    progress2_incrementor = doc_width > 770 ? 0.02 : 0.04;
+    progress2 += progress2_incrementor;
     if (progress2 > 1) {
       progress2 = 1;
     }
@@ -943,7 +941,10 @@ async function p5_button_press(type){
     } else {
       logEntry("!!! Invalid move window !!!");
     }
-
+    // if (window_end == p5_maxPkt){
+    //   p5_window_pos_trigger = 0;
+    //   if(window_operations[0] == "A1") p5_window_size_trigger = 0;
+    // }
   }
 
 
@@ -991,7 +992,7 @@ async function p5_button_press(type){
       // A1, D2
       // if (returnSuccess * success && (window_operations[0] == "D2" || window_operations.length == 0)){
       
-      logEntry(`Send New: win_end-${window_end} win_start-${window_start} ls-${last_pkt_sent} lar-${last_ack_received} s-${success} r-${returnSuccess}`);
+      // logEntry(`Send New: win_end-${window_end} win_start-${window_start} ls-${last_pkt_sent} lar-${last_ack_received} s-${success} r-${returnSuccess}`);
       console.log(`Send New: win_end-${window_end} win_start-${window_start} ls-${last_pkt_sent} lar-${last_ack_received} s-${success} r-${returnSuccess}`);
 
       if (window_end ==  last_ack_received){
@@ -1043,7 +1044,7 @@ async function p5_button_press(type){
     else if (force_resend) {
       var resend_input = document.getElementById("resend_pkt");
       var resendPkt = Number(resend_input.value);
-      logEntry(`${resendPkt}`)
+      // logEntry(`${resendPkt}`)
 
       if (resendPkt == last_ack_received + 1 && resendPkt <= max_pkt_sent && resendPkt >= window_start && resendPkt <= window_end) {
         // console.log("here",resendPkt);
@@ -1097,6 +1098,11 @@ async function p5_button_press(type){
       
     }
     else logEntry("!!!Invalid increase in window size!!!");
+
+    // if (window_end == p5_maxPkt){
+    //   p5_window_pos_trigger = 0;
+    //   if(window_operations[0] == "A1") p5_window_size_trigger = 0;
+    // }
   }
 
   // DIVIDE BY 2
@@ -1120,7 +1126,10 @@ async function p5_button_press(type){
 
   // logEntry(`${ray_counter} - s: ${window_start}; ls: ${last_pkt_sent}; lar: ${last_ack_received};`);
 
-
+  if(window_end == p5_maxPkt && window_operations[0] != "D2"){
+    p5_window_pos_trigger = 0;
+    p5_window_size_trigger = 0;
+  }
   for (var i = 1; i <= p5_maxPkt; i++) {
     pkt_head[i - 1].className = "";
     if (i == window_start) pkt_head[i - 1].className += "window-start ";
