@@ -38,6 +38,7 @@
     .p2-canvas-container{
         width: 80vw !important;
         height: 40vh !important;
+        scrollbar-width: none !important;
     }
 
     .p2-btn-div{
@@ -54,6 +55,11 @@
 
     .p2-log, .p1-log{
         height: 150px !important;
+    }
+
+    #p2-btn-window-container{
+        flex-direction: column !important;
+        justify-content: flex-start !important;
     }
     
 }

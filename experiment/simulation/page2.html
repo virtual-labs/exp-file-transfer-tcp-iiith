@@ -23,7 +23,8 @@
   <body class="body">
     <script src="./js/nav.js" id="navbar-2"></script>
     <div class="content p2-content">
-          <div style="display: grid; grid-template-rows: auto auto; justify-content: center;">
+          <div style="display: flex; flex-direction: column-reverse; justify-content: flex-end;
+    align-items: center;" id="p2-btn-window-container">
 
             <div style="margin-left: 2%; border: 5px ridge white; padding: 5px; width: 280px; text-align: center; height: fit-content ; font-size: small;">
               <!-- for window -->
@@ -81,30 +82,13 @@
                 <div class="p2-btn-div">
                   <button id="send_next" type="button" class="btn-green " style="width: 130px;" onclick="p2_buttonPress(1)">Send New</button>
                 </div>
-                <div style="flex-direction: row;" class="p2-btn-div">
+                <div style="display: flex; flex-direction: row !important;" class="p2-btn-div">
                   <button id="resend" type="button" class="btn-blue " style="width: 130px;" onclick="p2_buttonPress(2)">Re-Send</button>
                   <input type="number" id="resend_pkt" min="1" max="10" value="1" style=" width: 50px;">
               </div>
             </div>
           </div>
-
-        <!-- <div style="display: grid; grid-template-columns: 1fr 10fr; width: 420px; overflow-y:scroll; scrollbar-width:none; height: 65vh;">
-        <div style=" width: 420px; height: 410px;  overflow-y: scroll;">
-
-          <div style="display: grid; grid-template-columns: 1fr 10fr;">
-            <div id="ray-name" style="flex: 1; display: flex; flex-direction: column; height: 60vh;">
-              <div>H</div>
-            </div>
-            <div id="ray-name" style="display: grid;grid-column: 1fr; height: 60vh;"></div> 
-            <div id="canvas" class="p2-canvas">
-              <div id="canvas-title" class="canvas-title"></div>
-  
-            </div>
-          </div>
-
-        </div> -->
-
-        <div style="display: grid; grid-template-columns: 1fr 10fr; width: 420px; overflow-y:scroll; scrollbar-gutter: stable; overflow-x: hidden; height: 65vh;" class="p2-canvas-container">
+        <div style="display: grid; grid-template-columns: 1fr 10fr; width: 420px; overflow-y:scroll; scrollbar-gutter: stable; overflow-x: hidden; height: 65vh; justify-self: center;" class="p2-canvas-container">
 
           <div id="ray-name" style="flex: 1; display: flex; flex-direction: column;">
             <div>&nbsp;</div>
