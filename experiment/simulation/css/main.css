@@ -222,7 +222,7 @@ hr{
   scrollbar-width:none;
 }
 
-.p2-btn-container{
+.p2-btn-container, .p5-btn-container{
   margin: 2% ; 
   display: grid;
   grid-template-rows: repeat(3, 1fr);
