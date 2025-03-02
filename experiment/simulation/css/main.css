@@ -13,7 +13,7 @@ url('https://fonts.googleapis.com/css?family=Source+Code+Pro:900');
 
 body {
   background-color: #ffffff;
-  margin: 3%;
+  margin: 0.5%;
   height: 80vh;
 }
 
@@ -61,6 +61,22 @@ input {
 .btn-green:active {
   background-color: #c6ff5d;
   border-color: #638525;
+  color: rgb(0, 0, 0);
+}
+.btn-grey {
+  background-color: #96A0A3;
+  border-color: #445954;
+  color: white;
+  margin: 1%;
+}
+.btn-grey:hover {
+  background-color: #c9d6da;
+  border-color: #445954;
+  color: rgb(0, 0, 0);
+}
+.btn-grey:active {
+  background-color: #c9d6da;
+  border-color: #445954;
   color: rgb(0, 0, 0);
 }
 
@@ -228,7 +244,7 @@ hr{
   grid-template-rows: repeat(3, 1fr);
 }
 
-.p2-content, .p4-content, .p5-content{
+.p2-content, .p4-content, .p5-content, .p7-content{
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
 }

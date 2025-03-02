@@ -23,7 +23,8 @@
         grid-template-rows: 0.7fr 1fr 1fr; 
     }
 
-    .p5-content{
+    .p5-content, .p7-content{
+        display: grid;
         grid-template-columns: none !important;
         grid-template-rows: 0.8fr 1fr 1fr; 
     }
@@ -60,6 +61,16 @@
         width: 80vw !important;
         align-items: center;
     }
+
+    .p7-btn-container{
+        width: 80vw !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .media-dis-hide{
+        display: none !important;
+    }
     .p4-btn-container{
         margin: 2% !important;
         display: grid !important;
@@ -72,6 +83,13 @@
     .p2-canvas-container{
         width: 80vw !important;
         height: 40vh !important;
+        scrollbar-width: none !important;
+        border: 1px solid black !important;
+    }
+
+    .p7-canvas-container{
+        width: 80vw !important;
+        /* height: 40vh !important; */
         scrollbar-width: none !important;
         border: 1px solid black !important;
     }
@@ -110,6 +128,18 @@
         flex-direction: column !important;
         justify-content: flex-start !important;
     }
+
+    #p5-btn-window-container{
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+    }
+    
+    #p7-btn-window-container{
+        width: 80vw !important;
+        justify-content: flex-start !important;
+    }
+
     #p4-btn-window-container{
         flex-direction: column-reverse !important;
         justify-content: flex-end !important;
@@ -171,4 +201,19 @@
         border: 1px solid black !important;
     }
     
+
+    #top{
+        display: flex !important;
+        justify-content: center !important;
+        scale: 0.55;
+    }
+
+    #p5-window-title{
+        font-size: medium !important;
+        margin-top: 0 !important;
+    }
+
+    #Log-span, #timer, #status-box{
+        width: 95vw !important;
+    }
 }

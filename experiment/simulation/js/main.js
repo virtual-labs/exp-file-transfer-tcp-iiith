@@ -14,8 +14,22 @@ else if(document.title == "AIMD"){
   var div_content = document.querySelector(".p5-content");
   var doc_width = div_content.offsetWidth;
 }
+else if(document.title == "TCP"){
+  var div_content = document.querySelector(".p7-content");
+  var doc_width = div_content.offsetWidth;
+  if (doc_width <= 768){
+    document.getElementById('top').style.display = "";
+  }
+  else{
+    document.getElementById('bottom').style.display = "";
+  }
 
-const length = doc_width > 770 ? 350 : doc_width*0.7;
+  if (doc_width < 370){
+    document.body.style.width = "120%";
+  }
+}
+
+const length = doc_width > 768 ? 350 : doc_width*0.7;
 const graphWidth = length;
 const graphHeight = 25;
 
