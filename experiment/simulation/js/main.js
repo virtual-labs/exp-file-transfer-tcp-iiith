@@ -82,7 +82,7 @@ var timer_call = 0;
 /** 1 on timeout */
 var force_resend = false;
 var force_window_change = false;
-const time_out_duration = 5;
+const time_out_duration = 15;
 var duration = time_out_duration;
 var intervalID;
 
@@ -151,7 +151,8 @@ function animateRay(startX, startY, angle, length, ack = 0) {
 
   // console.log(canvas.height);
   div.appendChild(canvas);
-  canvas.scrollIntoView(false);
+  if(window.innerWidth > 768)
+    canvas.scrollIntoView(false);
 
   // console.log(length * cosAngle, length * sinAngle);
   // Get the 2D drawing context
@@ -248,7 +249,7 @@ async function doublePkt(idx, send_len, ret_len, pkt_no, ack_no) {
     var currentX = startX;
     var currentY = startY;
 
-    progress_incrementor = doc_width > 770 ? 0.02 : 0.04;
+    progress_incrementor = doc_width > 770 ? 0.02 : 0.03;
     progress += progress_incrementor; // Makes difference to send ray
     // delay(10000);
     if (progress > 1) {
@@ -317,7 +318,7 @@ async function doublePkt(idx, send_len, ret_len, pkt_no, ack_no) {
 
     var currentX2 = startX20;
     var currentY2 = startY20;
-    progress2_incrementor = doc_width > 770 ? 0.02 : 0.04;
+    progress2_incrementor = doc_width > 770 ? 0.02 : 0.03;
     progress2 += progress2_incrementor;
     if (progress2 > 1) {
       progress2 = 1;
@@ -454,7 +455,8 @@ async function doublePkt(idx, send_len, ret_len, pkt_no, ack_no) {
   div.appendChild(span1);
   div.appendChild(span2);
 
-  t2.scrollIntoView(false);
+  if(window.innerWidth > 768)
+    t2.scrollIntoView(false);
 
   var send_ctx = send_canvas.getContext("2d");
   // send ray
@@ -1646,9 +1648,17 @@ function get_window() {
   else if(document.title == "TCP"){
     window_end = window_start;
     for (var i = 0; i < p7_maxPkt; i++) {
-      pkt_head.push(document.getElementById(`pkt${i + 1}-head`));
-      pkt_sent.push(document.getElementById(`pkt${i + 1}-sent`));
-      pkt_ack.push(document.getElementById(`pkt${i + 1}-ack`));
+      if(window.innerWidth > 768){
+        pkt_head.push(document.getElementById(`d-pkt${i + 1}-head`));
+        pkt_sent.push(document.getElementById(`d-pkt${i + 1}-sent`));
+        pkt_ack.push(document.getElementById(`d-pkt${i + 1}-ack`));
+      }
+      else{
+        pkt_head.push(document.getElementById(`pkt${i + 1}-head`));
+        pkt_sent.push(document.getElementById(`pkt${i + 1}-sent`));
+        pkt_ack.push(document.getElementById(`pkt${i + 1}-ack`));
+
+      }
     }
   }
 

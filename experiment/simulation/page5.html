@@ -22,10 +22,27 @@
 
   <body class="body">
     <script src="./js/nav.js" id="navbar-5"></script>
+
+  <button class="btn btn-outline-info" type="button" data-toggle="collapse" data-target="#instruction-data" aria-expanded="false" aria-controls="instruction-data">Instructions</button>
+  </div>
+  <div class="collapse" id="instruction-data" style="margin-top: 2%;">
+      <div class="card card-body">
+          <ul>
+              <li><b><u>Task</u>:</b> Receive ACK for 10 packets by following <b>Additive Increase, Multiplicative Decrease</b> Protocol</li>
+              <li><i><b>Move Window</b></i> - Move window position by 1 to right</li>
+              <li><i><b>Send New</b></i> - Send the next packet</li>
+              <li><i><b>Re-Send</b></i> - Resend a specific packet</li>
+              <li><i><b>Add 1</b></i> - Increase Window Size by 1</li>
+              <li><i><b>Divide 2</b></i> - Divide Window Size by 2</li>
+          </ul>
+      </div>
+    </div>
+
     <div class="content p5-content">
           <div style="display: flex; flex-direction: column-reverse; justify-content: flex-end;
     align-items: center;" id="p2-btn-window-container">
 
+            <!-- PKT VIEW -->
             <div style="margin-left: 2%; border: 5px ridge white; padding: 5px; width: 260px; text-align: center; height: fit-content ; font-size: small;">
               <!-- for window -->
               <b>Current Window:</b>
@@ -73,6 +90,7 @@
               </table>
     
             </div>
+            <!-- BTN Container -->
             <div class="p5-btn-container">
               <div class="p2-btn-div ">
                 <button id="move_window" type="button" class="btn-grey "  style="width: 130px;" onclick="p5_button_press(0)">Move window</button>
@@ -85,7 +103,7 @@
                   <input type="number" id="resend_pkt" min="1" max="10" value="1" style=" width: 50px;">
               </div>
               <div class="p2-btn-div p5-bottom">
-                <p style="margin: 0; text-align: center; font-size: smaller;" id="p5-window-title">Window Size ⇒</p>
+                <p style="margin: 0; text-align: center; font-size: larger; margin-top: 15px;" id="p5-window-title">Window Size ⇒</p>
               </div>
                 <div class="p2-btn-div p5-bottom">
                   <button id="resend" type="button" class="btn-blue " style="width: 130px;" onclick="p5_button_press(3)">Add 1</button>

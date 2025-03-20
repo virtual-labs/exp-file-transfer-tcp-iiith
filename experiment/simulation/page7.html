@@ -22,6 +22,29 @@
 
   <body class="body">
     <script src="./js/nav.js" id="navbar-7"></script>
+
+    <button class="btn btn-outline-info" type="button" data-toggle="collapse" data-target="#instruction-data" aria-expanded="false" aria-controls="instruction-data">Instructions</button>
+    </div>
+    <div class="collapse" id="instruction-data" style="margin-top: 2%;">
+        <div class="card card-body">
+            <ul>
+                <li><b><u>Task</u>:</b> Receive ACK for 20 packets by following <b>Complete TCP</b> Protocol</li>
+                <li><u>Step 1</u>: TCP 3-Way Handshake</li>
+                <li><u>Step 2</u>: Slow Start (Congestion Window Size - 8)</li>
+                <li><u>Step 3</u>: Additive Increase, Multiplicative Decrease (All remaining packets)</li>
+                <li><u>Step 4</u>: TCP Closure</li>
+                <li><i><b>Send New</b></i> - Send the next packet</li>
+                <li><i><b>Re-Send</b></i> - Resend a specific packet</li>
+                <li><i><b>Move Window</b></i> - Move window position by 1 to right</li>
+                <li><i><b>Size + 1</b></i> - Increase Window Size by 1</li>
+                <li><i><b>Size ÷ 2</b></i> - Divide Window Size by 2</li>
+                <li><i><b>SYN</b></i> - Send SYN packet</li>
+                <li><i><b>FIN</b></i> - Send FIN packet</li>
+                <li><i><b>ACK</b></i> - Send ACK packet</li>
+            </ul>
+        </div>
+      </div>
+      
     <div class="content p7-content">
 
       <div style="display: flex; justify-content: flex-end; flex-direction: column; align-items: center;" id="p7-btn-window-container">
@@ -228,72 +251,72 @@
         <table>
           <tr>
             <th>Pkt</th>
-            <th id="pkt1-head">1</th>
-            <th id="pkt2-head">2</th>
-            <th id="pkt3-head">3</th>
-            <th id="pkt4-head">4</th>
-            <th id="pkt5-head">5</th>
-            <th id="pkt6-head">6</th>
-            <th id="pkt7-head">7</th>
-            <th id="pkt8-head">8</th>
-            <th id="pkt9-head">9</th>
-            <th id="pkt10-head">10</th>
-            <th id="pkt11-head">11</th>
-            <th id="pkt12-head">12</th>
-            <th id="pkt13-head">13</th>
-            <th id="pkt14-head">14</th>
-            <th id="pkt15-head">15</th>
-            <th id="pkt16-head">16</th>
-            <th id="pkt17-head">17</th>
-            <th id="pkt18-head">18</th>
-            <th id="pkt19-head">19</th>
-            <th id="pkt20-head">20</th>
+            <th id="d-pkt1-head">1</th>
+            <th id="d-pkt2-head">2</th>
+            <th id="d-pkt3-head">3</th>
+            <th id="d-pkt4-head">4</th>
+            <th id="d-pkt5-head">5</th>
+            <th id="d-pkt6-head">6</th>
+            <th id="d-pkt7-head">7</th>
+            <th id="d-pkt8-head">8</th>
+            <th id="d-pkt9-head">9</th>
+            <th id="d-pkt10-head">10</th>
+            <th id="d-pkt11-head">11</th>
+            <th id="d-pkt12-head">12</th>
+            <th id="d-pkt13-head">13</th>
+            <th id="d-pkt14-head">14</th>
+            <th id="d-pkt15-head">15</th>
+            <th id="d-pkt16-head">16</th>
+            <th id="d-pkt17-head">17</th>
+            <th id="d-pkt18-head">18</th>
+            <th id="d-pkt19-head">19</th>
+            <th id="d-pkt20-head">20</th>
           </tr>
           <tr>
               <td>Sent</td>
-              <td id="pkt1-sent"></td>
-              <td id="pkt2-sent"></td>
-              <td id="pkt3-sent"></td>
-              <td id="pkt4-sent"></td>
-              <td id="pkt5-sent"></td>
-              <td id="pkt6-sent"></td>
-              <td id="pkt7-sent"></td>
-              <td id="pkt8-sent"></td>
-              <td id="pkt9-sent"></td>
-              <td id="pkt10-sent"></td>
-              <td id="pkt11-sent"></td>
-              <td id="pkt12-sent"></td>
-              <td id="pkt13-sent"></td>
-              <td id="pkt14-sent"></td>
-              <td id="pkt15-sent"></td>
-              <td id="pkt16-sent"></td>
-              <td id="pkt17-sent"></td>
-              <td id="pkt18-sent"></td>
-              <td id="pkt19-sent"></td>
-              <td id="pkt20-sent"></td>
+              <td id="d-pkt1-sent"></td>
+              <td id="d-pkt2-sent"></td>
+              <td id="d-pkt3-sent"></td>
+              <td id="d-pkt4-sent"></td>
+              <td id="d-pkt5-sent"></td>
+              <td id="d-pkt6-sent"></td>
+              <td id="d-pkt7-sent"></td>
+              <td id="d-pkt8-sent"></td>
+              <td id="d-pkt9-sent"></td>
+              <td id="d-pkt10-sent"></td>
+              <td id="d-pkt11-sent"></td>
+              <td id="d-pkt12-sent"></td>
+              <td id="d-pkt13-sent"></td>
+              <td id="d-pkt14-sent"></td>
+              <td id="d-pkt15-sent"></td>
+              <td id="d-pkt16-sent"></td>
+              <td id="d-pkt17-sent"></td>
+              <td id="d-pkt18-sent"></td>
+              <td id="d-pkt19-sent"></td>
+              <td id="d-pkt20-sent"></td>
           </tr>
           <tr>
               <td>ACK</td>
-              <td id="pkt1-ack"></td>
-              <td id="pkt2-ack"></td>
-              <td id="pkt3-ack"></td>
-              <td id="pkt4-ack"></td>
-              <td id="pkt5-ack"></td>
-              <td id="pkt6-ack"></td>
-              <td id="pkt7-ack"></td>
-              <td id="pkt8-ack"></td>
-              <td id="pkt9-ack"></td>
-              <td id="pkt10-ack"></td>
-              <td id="pkt11-ack"></td>
-              <td id="pkt12-ack"></td>
-              <td id="pkt13-ack"></td>
-              <td id="pkt14-ack"></td>
-              <td id="pkt15-ack"></td>
-              <td id="pkt16-ack"></td>
-              <td id="pkt17-ack"></td>
-              <td id="pkt18-ack"></td>
-              <td id="pkt19-ack"></td>
-              <td id="pkt20-ack"></td>
+              <td id="d-pkt1-ack"></td>
+              <td id="d-pkt2-ack"></td>
+              <td id="d-pkt3-ack"></td>
+              <td id="d-pkt4-ack"></td>
+              <td id="d-pkt5-ack"></td>
+              <td id="d-pkt6-ack"></td>
+              <td id="d-pkt7-ack"></td>
+              <td id="d-pkt8-ack"></td>
+              <td id="d-pkt9-ack"></td>
+              <td id="d-pkt10-ack"></td>
+              <td id="d-pkt11-ack"></td>
+              <td id="d-pkt12-ack"></td>
+              <td id="d-pkt13-ack"></td>
+              <td id="d-pkt14-ack"></td>
+              <td id="d-pkt15-ack"></td>
+              <td id="d-pkt16-ack"></td>
+              <td id="d-pkt17-ack"></td>
+              <td id="d-pkt18-ack"></td>
+              <td id="d-pkt19-ack"></td>
+              <td id="d-pkt20-ack"></td>
           </tr>
         </table>
   

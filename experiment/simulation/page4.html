@@ -22,6 +22,20 @@
 
   <body class="body">
     <script src="./js/nav.js" id="navbar-4"></script>
+
+  <button class="btn btn-outline-info" type="button" data-toggle="collapse" data-target="#instruction-data" aria-expanded="false" aria-controls="instruction-data">Instructions</button>
+  </div>
+  <div class="collapse" id="instruction-data" style="margin-top: 2%;">
+      <div class="card card-body">
+          <ul>
+              <li><b><u>Task</u>:</b> Receive ACK for 8 packets by following <b>Slow-Start</b> Protocol</li>
+              <li><i><b>Move Window</b></i> - Move window position by 1 to right</li>
+              <li><i><b>Send New</b></i> - Send the next packet</li>
+              <li><i><b>Extend Window</b></i> - Increase Window Size by 1</li>
+          </ul>
+      </div>
+    </div>
+
     <div class="content p2-content">
           <div style="display: flex; flex-direction: column-reverse; justify-content: flex-end;
     align-items: center;" id="p2-btn-window-container">
@@ -77,7 +91,7 @@
                 </div>
                 <div style="text-align: center;" class="p4-btn-div">
                   <!-- <p style="margin: 0;">Window Size</p> -->
-                  <button id="resend" type="button" class="btn-blue " style="width: 130px; " onclick="p4_button_press(2)">Increase Window Size</button>
+                  <button id="resend" type="button" class="btn-blue " style="width: 130px; ;" onclick="p4_button_press(2)">Extend Window</button>
                 </div>
             </div>
           </div>
