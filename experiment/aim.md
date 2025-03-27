@@ -1,1 +1,1 @@
-### Aim of the experiment
+This module explains the working of **Link State Routing Algorithm** in Computer Networks. It is Internet’s transport-layer, connection-oriented, reliable transport protocol. 

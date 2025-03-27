@@ -89,6 +89,7 @@ var intervalID;
 var end_ = 0;
 
 var p3_count = 0;
+var p6_count = 0;
 
 var window_operations = [];
 var p5_window_size_trigger = 0; // for add 1 and div 2
@@ -857,7 +858,65 @@ async function p3_button_press(user, type, closure = 0) {
       await callAnimateRay(1, 1);
       sending = 0;
 
-      alert("Procede to next page...");
+      alert("proceed to next page...");
+    } else {
+      logEntry(`${!user ? "Sender" : "Receiver"}: Invalid Handshake`);
+    }
+  }
+  sending = 0;
+}
+
+async function p6_button_press(user, type) {
+  if (sending) {
+    logEntry("Invalid Button Press. Please wait.");
+    return;
+  }
+
+  // const msg = closure ? "FIN" : "SYN";
+  if (p6_count == 0) {
+    // 1st sender - fin
+    if (user == 0 && type == 0) {
+      p6_count++;
+      logEntry(`Sender: FIN sent`);
+      sending = 1;
+      await callAnimateRay(1, 1);
+      sending = 0;
+    } else {
+      logEntry(`${!user ? "Sender" : "Receiver"}: Invalid Handshake`);
+    }
+  } else if (p6_count == 1) {
+    // 2nd receiver - ack
+    if (user == 1 && type == 1) {
+      p6_count++;
+      logEntry(`Receiver: ACK sent`);
+      sending = 1;
+      await callAnimateRay(0, 1);
+      sending = 0;
+    } else {
+      logEntry(`${!user ? "Sender" : "Receiver"}: Invalid Handshake`);
+    }
+  } else if (p6_count == 2) {
+    // 3rd receiver - fin
+    if (user == 1 && type == 0) {
+      p6_count++;
+      logEntry("Receiver: FIN sent");
+      sending = 1;
+      await callAnimateRay(0, 1);
+      sending = 0;
+    } else {
+      logEntry(`${!user ? "Sender" : "Receiver"}: Invalid Handshake`);
+    }
+  } else if (p6_count == 3) {
+    // 4th sender - ack
+    if (user == 0 && type == 1) {
+      p6_count++;
+      logEntry("Sender: ACK sent");
+      sending = 1;
+      await callAnimateRay(1, 1);
+      sending = 0;
+
+      setTimeout(() => {alert("proceed to next page...");}, 2000);
+
     } else {
       logEntry(`${!user ? "Sender" : "Receiver"}: Invalid Handshake`);
     }
@@ -1202,58 +1261,126 @@ async function p7_button_press(type) {
     // 0 - Start
     // 1 - Close
 
-  const msg = p7_closure ? "FIN" : "SYN";
+  // const msg = p7_closure ? "FIN" : "SYN";
+    if (p7_closure == 0){
+      msg = "SYN";
+      if(!p3_count){
+        if((type == 5 && !p7_closure ) || (type = 6 && p7_closure)){
+          // send SYN
+          p3_count++;
+          logEntry(`Sender: ${msg} sent`);
+          sending = 1;
+          // await callAnimateRay(1, 1);
+          await doublePkt(0,length,length,`${msg}`,`${msg}\n+\nACK`);
+          doublePkt(0,0,0,"","");
+          sending = 0;
+          // SYNACK
+          p3_count++;
+          logEntry(`Receiver: ${msg}+ACK sent`);
+          // sending = 1;
+          // // await callAnimateRay(0, 1);
+          // // await doublePkt(0,length/2,0,"","");
+          // sending = 0;
+        } 
+        else {
+          logEntry(`Invalid Operation`);
+        }
 
-    if(!p3_count){
-      if((type == 5 && !p7_closure ) || (type = 6 && p7_closure)){
-        // send SYN
-        p3_count++;
-        logEntry(`Sender: ${msg} sent`);
-        sending = 1;
-        // await callAnimateRay(1, 1);
-        await doublePkt(0,length,length,`${msg}`,`${msg}\n+\nACK`);
-        doublePkt(0,0,0,"","");
-        sending = 0;
-        // SYNACK
-        p3_count++;
-        logEntry(`Receiver: ${msg}+ACK sent`);
-        // sending = 1;
-        // // await callAnimateRay(0, 1);
-        // // await doublePkt(0,length/2,0,"","");
-        // sending = 0;
-      } 
-      else {
-        logEntry(`Invalid Operation`);
       }
-    }
-    else if(p3_count == 2){
-      if(type == 7){
-        // send ACK/FIN
-        p3_count++;
-        logEntry("Sender: ACK sent");
-        sending = 1;
-        // await callAnimateRay(1, 1);
-        await doublePkt(0,length,0,"ACK","");
-        sending = 0;
+      else if(p3_count == 2){
+        if(type == 7){
+          // send ACK/FIN
+          p3_count++;
+          logEntry("Sender: ACK sent");
+          sending = 1;
+          // await callAnimateRay(1, 1);
+          await doublePkt(0,length,0,"ACK","");
+          sending = 0;
 
 
-        if (!p7_closure){
-          curr_phase = 1;
-          p7_docTitle = "Slow-Start";
-          alert("Succesfull Handshake");
-          window_start = 1;
-          window_end = 1;
+          if (!p7_closure){
+            curr_phase = 1;
+            p7_docTitle = "Slow-Start";
+            alert("Succesfull Handshake");
+            window_start = 1;
+            window_end = 1;
+          }
+          // else {
+          //   end_ = 1;
+          //   alert("Succesfull Completion of TCP");
+          // }
+
         }
         else {
-          end_ = 1;
-          alert("Succesfull Completion of TCP");
+          logEntry(`Invalid Operation`);
         }
-
-      }
-      else {
-        logEntry(`Invalid Operation`);
       }
     }
+    else if (p7_closure == 1){
+      // fin - 6
+      // ack - 7
+
+      if (p6_count == 0) {
+        // 1st sender - fin
+        if (type == 6) {
+          p6_count++;
+          logEntry(`Sender: FIN sent`);
+          sending = 1;
+          // await callAnimateRay(1, 1);
+          await doublePkt(0,length,length,"FIN","ACK");
+          sending = 0;
+          p6_count++;
+          logEntry(`Receiver: ACK sent`);
+          sending = 1;
+          await doublePkt(0,0,length,"","FIN");
+          sending = 0;
+          p6_count++;
+          logEntry("Receiver: FIN sent");
+        } else {
+          logEntry(`Sender: Invalid Handshake`);
+        }
+      // } else if (p6_count == 1) {
+      //   // 2nd receiver - ack
+      //   if (user == 1 && type == 1) {
+      //     p6_count++;
+      //     logEntry(`Receiver: ACK sent`);
+      //     sending = 1;
+      //     await callAnimateRay(0, 1);
+      //     sending = 0;
+      //   } else {
+      //     logEntry(`${!user ? "Sender" : "Receiver"}: Invalid Handshake`);
+      //   }
+      // } else if (p6_count == 2) {
+      //   // 3rd receiver - fin
+      //   if (user == 1 && type == 0) {
+      //     p6_count++;
+      //     logEntry("Receiver: FIN sent");
+      //     sending = 1;
+      //     await callAnimateRay(0, 1);
+      //     sending = 0;
+      //   } else {
+      //     logEntry(`${!user ? "Sender" : "Receiver"}: Invalid Handshake`);
+      //   }
+      } else if (p6_count == 3) {
+        // 4th sender - ack
+        if (type == 7) {
+          p6_count++;
+          logEntry("Sender: ACK sent");
+          sending = 1;
+          // await callAnimateRay(1, 1);
+          await doublePkt(0,length,0,"ACK","");
+          sending = 0;
+
+          end_ = 1;
+          setTimeout(() => {alert("Succesfull Completion of TCP");}, 2000);
+    
+        } else {
+          logEntry(`Sender: Invalid Handshake`);
+        }
+      }
+      sending = 0;
+    }
+
   }
 
   else if (curr_phase == 1){
@@ -1592,11 +1719,36 @@ async function p7_button_press(type) {
   
     if(last_ack_received == p7_maxPkt){
       p7_closure = 1;
-      curr_phase = 0;
+      curr_phase = 3;
       await delay(4500);
       alert("Close the TCP connection");
     }
   }
+  // else if (curr_phase == 3){
+  //   // CLOSURE PHASE
+  //   // fin - 6
+  //   // ack - 7
+
+  //   if(p6_count == 0){
+  //     if(type == 6){
+  //       p6_button_press(0,0);
+  //       await delay(2000);
+  //       p6_button_press(1,1);
+  //       await delay(2000);
+  //       p6_button_press(1,0);
+  //     } 
+  //     else logEntry(`Sender: Invalid Handshake`);
+  //   }
+  //   else if (p6_count == 3){
+  //     if(type == 7){
+  //       p6_button_press(0,1);
+  //       end_ = 1;
+  //       // alert in p6_button_press
+  //     }
+  //     else logEntry(`Sender: Invalid Handshake`);
+  //   }
+
+  // }
 
 }
 
