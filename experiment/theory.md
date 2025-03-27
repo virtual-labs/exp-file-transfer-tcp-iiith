@@ -48,3 +48,7 @@ The **Go-Back-N (GBN) Protocol**
 4. **ACK** → The sender acknowledges the receiver’s **FIN**, completing the termination.  
 
 After termination, TCP enters the **TIME-WAIT** state before completely closing the connection.  
+
+### Reference Books
+1. Kurose, J. F., & Ross, K. W. *Computer Networking: A Top-Down Approach*. Pearson.
+2. Tanenbaum, A. S., & Wetherall, D. J. *Computer Networks*. Pearson.
