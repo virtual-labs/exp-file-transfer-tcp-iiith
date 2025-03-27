@@ -2,59 +2,59 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "Which TCP field is used to ensure ordered data delivery?",
+      "question": "What happens when a TCP sender detects packet loss?",
       "answers": {
-        "a": "Sequence Number",
-        "b": "Acknowledgment Number",
-        "c": "Window Size",
-        "d": "Checksum"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "In TCP congestion control, what happens during the slow-start phase?",
-      "answers": {
-        "a": "The congestion window increases exponentially.",
-        "b": "The sender stops sending data.",
-        "c": "The congestion window decreases exponentially.",
-        "d": "The sender waits for an explicit congestion signal."
+        "a": "It reduces the congestion window size.",
+        "b": "It stops transmitting all packets.",
+        "c": "It increases the transmission rate.",
+        "d": "It ignores the loss and continues sending."
       },
       "correctAnswer": "a",
       "difficulty": "intermediate"
     },
-    {
-      "question": "How does TCP ensure reliability in data transmission?",
-      "answers": {
-        "a": "By using checksums and acknowledgments.",
-        "b": "By encrypting all packets.",
-        "c": "By sending packets randomly.",
-        "d": "By dropping duplicate packets."
+      {
+        "question": "Why is TCP considered a connection-oriented protocol?",
+        "answers": {
+          "a": "It does not require an initial handshake.",
+          "b": "It ensures data is delivered in sequence and without errors.",
+          "c": "It does not retransmit lost packets.",
+          "d": "It only supports one-way communication."
+        },
+        "correctAnswer": "b",
+        "difficulty": "beginner"
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "During TCP connection termination, why does the TIME-WAIT state exist?",
-      "answers": {
-        "a": "To ensure all delayed packets are received.",
-        "b": "To restart the three-way handshake.",
-        "c": "To prevent TCP from being used again.",
-        "d": "To allow connection migration."
+      {
+        "question": "What is the purpose of the three-way handshake in TCP?",
+        "answers": {
+          "a": "To verify the receiver's IP address.",
+          "b": "To establish a reliable connection before data transfer.",
+          "c": "To encrypt the data being transmitted.",
+          "d": "To check network congestion levels."
+        },
+        "correctAnswer": "b",
+        "difficulty": "beginner"
       },
-      "correctAnswer": "a",
-      "difficulty": "intermediate"
-    },
-    {
-      "question": "Which TCP congestion control algorithm reduces the window size exponentially when congestion is detected?",
-      "answers": {
-        "a": "Slow Start",
-        "b": "Additive Increase, Multiplicative Decrease (AIMD)",
-        "c": "Selective Repeat",
-        "d": "Go-Back-N"
+      {
+        "question": "Which TCP mechanism controls the flow of data to prevent overwhelming the receiver?",
+        "answers": {
+          "a": "Slow Start",
+          "b": "Congestion Window",
+          "c": "Sliding Window",
+          "d": "Checksum"
+        },
+        "correctAnswer": "c",
+        "difficulty": "intermediate"
       },
-      "correctAnswer": "b",
-      "difficulty": "advanced"
-    }
-  ]  
+      {
+        "question": "What is the main difference between Go-Back-N and Selective Repeat protocols?",
+        "answers": {
+          "a": "Go-Back-N retransmits all packets after a loss, while Selective Repeat only retransmits lost packets.",
+          "b": "Go-Back-N does not use acknowledgments, while Selective Repeat does.",
+          "c": "Go-Back-N allows unlimited packet transmission, while Selective Repeat does not.",
+          "d": "Go-Back-N requires TCP, while Selective Repeat does not."
+        },
+        "correctAnswer": "a",
+        "difficulty": "advanced"
+      }
+    ]
 }

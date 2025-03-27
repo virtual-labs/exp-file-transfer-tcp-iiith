@@ -1,1 +1,1 @@
-This module explains the working of **Link State Routing Algorithm** in Computer Networks. It is Internet’s transport-layer, connection-oriented, reliable transport protocol. 
+This module explains the working of **Transmission Control Protocol** in Computer Networks. It is Internet’s transport-layer, connection-oriented, reliable transport protocol.

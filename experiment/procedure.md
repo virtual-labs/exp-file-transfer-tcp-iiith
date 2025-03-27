@@ -33,7 +33,7 @@ The simulation has following 7 sections:
 
 ## 6. TCP Closure
 - Demonstrate the TCP Closure.
-- Send the `FIN`, `FIN+ACK` and `ACK` in appropriate order, and from appropriate user.
+- Send the `FIN` and `ACK` in appropriate order, and from appropriate user.
 - Begin from the Sender.
 
 ## 7. TCP
