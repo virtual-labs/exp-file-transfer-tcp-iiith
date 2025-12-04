@@ -1,0 +1,24 @@
+{
+  "name": "exp-file-transfer-tcp-iiith",
+  "version": "1.0.0",
+  "description": "<b>Discipline | <b>Fill your discipline name here\r :--|:--|\r <b> Lab | <b> Fill your lab name here\r <b> Experiment|     <b> Fill your experiment name and number here",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/virtual-labs/exp-file-transfer-tcp-iiith.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/virtual-labs/exp-file-transfer-tcp-iiith/issues"
+  },
+  "homepage": "https://github.com/virtual-labs/exp-file-transfer-tcp-iiith#readme",
+  "dependencies": {
+    "@virtual-labs/buildexp": "^2.1.0"
+  }
+}
