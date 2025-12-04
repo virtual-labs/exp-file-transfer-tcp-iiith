@@ -1,0 +1,60 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "What happens when a TCP sender detects packet loss?",
+      "answers": {
+        "a": "It reduces the congestion window size.",
+        "b": "It stops transmitting all packets.",
+        "c": "It increases the transmission rate.",
+        "d": "It ignores the loss and continues sending."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+      {
+        "question": "Why is TCP considered a connection-oriented protocol?",
+        "answers": {
+          "a": "It does not require an initial handshake.",
+          "b": "It ensures data is delivered in sequence and without errors.",
+          "c": "It does not retransmit lost packets.",
+          "d": "It only supports one-way communication."
+        },
+        "correctAnswer": "b",
+        "difficulty": "beginner"
+      },
+      {
+        "question": "What is the purpose of the three-way handshake in TCP?",
+        "answers": {
+          "a": "To verify the receiver's IP address.",
+          "b": "To establish a reliable connection before data transfer.",
+          "c": "To encrypt the data being transmitted.",
+          "d": "To check network congestion levels."
+        },
+        "correctAnswer": "b",
+        "difficulty": "beginner"
+      },
+      {
+        "question": "Which TCP mechanism controls the flow of data to prevent overwhelming the receiver?",
+        "answers": {
+          "a": "Slow Start",
+          "b": "Congestion Window",
+          "c": "Sliding Window",
+          "d": "Checksum"
+        },
+        "correctAnswer": "c",
+        "difficulty": "intermediate"
+      },
+      {
+        "question": "What is the main difference between Go-Back-N and Selective Repeat protocols?",
+        "answers": {
+          "a": "Go-Back-N retransmits all packets after a loss, while Selective Repeat only retransmits lost packets.",
+          "b": "Go-Back-N does not use acknowledgments, while Selective Repeat does.",
+          "c": "Go-Back-N allows unlimited packet transmission, while Selective Repeat does not.",
+          "d": "Go-Back-N requires TCP, while Selective Repeat does not."
+        },
+        "correctAnswer": "a",
+        "difficulty": "advanced"
+      }
+    ]
+}

@@ -1,0 +1,250 @@
+@import 
+url('https://fonts.googleapis.com/css?family=Source+Code+Pro:900');
+
+@import url(style_media.css);
+
+/* .vlab-colors {
+  green: #98CB3B;
+  dark-blue: #176696;
+  lighter-dark-blue: #2C9AD1;
+  grey: #96A0A3;
+  white: #FFFFFF;
+} */
+
+body {
+  background-color: #ffffff;
+  margin: 0.5%;
+  height: 80vh;
+}
+
+.table1 {
+  border: 1px solid black;
+}
+
+input {
+  width: 90px;
+}
+
+/* .container {
+  position: relative;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+} */
+
+.btn-blue {
+  background-color: #2C9AD1;
+  border-color: #176696;
+  color: white;
+  margin: 1%;
+}
+.btn-blue:hover {
+  background-color: #5ac8ff;
+  border-color: #176696;
+  color: rgb(0, 0, 0);
+}
+.btn-blue:active {
+  background-color: #5ac8ff;
+  border-color: #176696;
+  color: rgb(0, 0, 0);
+}
+.btn-green {
+  background-color: #98CB3B;
+  border-color: #638525;
+  color: white;
+  margin: 1%;
+}
+.btn-green:hover {
+  background-color: #c6ff5d;
+  border-color: #638525;
+  color: rgb(0, 0, 0);
+}
+.btn-green:active {
+  background-color: #c6ff5d;
+  border-color: #638525;
+  color: rgb(0, 0, 0);
+}
+.btn-grey {
+  background-color: #96A0A3;
+  border-color: #445954;
+  color: white;
+  margin: 1%;
+}
+.btn-grey:hover {
+  background-color: #c9d6da;
+  border-color: #445954;
+  color: rgb(0, 0, 0);
+}
+.btn-grey:active {
+  background-color: #c9d6da;
+  border-color: #445954;
+  color: rgb(0, 0, 0);
+}
+
+.status-box {
+    width: 80px; 
+    height: 50px;
+    background-color: #f7f7f7; 
+    border: 5px solid rgb(77, 73, 73); 
+    margin-left: 20px;
+    box-shadow: 4px 3px 4px #00000058;
+    border-radius: 5px;
+}
+
+.window{
+  text-align: center;
+  break-inside: auto;
+}
+
+.window-table{
+  border: none;
+  /* Remove default borders */
+  box-shadow: inset 0px 0px 0px 1px black;
+  /* Creates an inset black shadow for an inner border effect */
+  padding: 5px;
+  /* Optional padding to separate content from the inner border */
+  width: 100px;
+}
+
+/* .canvas-ele{
+  height: 25;
+  width: 350;
+} */
+
+.canvas-div{
+  display: flex;
+  justify-content: center;
+  flex-direction: row; 
+  overflow-y: hidden;
+  height:300px;
+  border-right: 14px;
+
+  /* border-style: ; */
+
+}
+
+.canvas-div:hover{
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  padding-right: 0;
+
+
+}
+
+/* .log-div{
+  /* overflow-y: hidden;  
+  height:180px; 
+  background-color: rgb(160, 212, 255) !important;
+  /* padding-right: 14px; 
+  
+} */
+
+.p3-button-div{
+  display: flex;
+  justify-content: center;
+}
+
+.window-start{
+  border-top: orangered;
+  border-bottom: orangered;
+  border-left: orangered;
+  border-bottom-width: 4px;
+  border-top-width: 4px;
+  border-style:groove;
+  border-left-width: 2px;
+  /* padding: 5px; */
+  
+}
+
+.window-end{
+  border-top: orangered;
+  border-bottom: orangered;
+  border-right: orangered;
+  border-bottom-width: 4px;
+  border-top-width: 4px;
+  border-style:groove;
+  border-right-width: 2px;
+  /* padding: 5px; */
+}
+
+.window-inside{
+  border-top: orangered;
+  border-bottom: orangered;
+  border-style: groove;
+  border-right-width: 0px;
+  border-left-width: 0px;
+  border-bottom-width: 4px;
+  border-top-width: 4px;
+  /* padding: 5px; */
+}
+
+th{
+  padding: 6px;
+}
+
+td{
+  padding: 0;
+}
+
+.para{
+  margin: 0; 
+  text-align: center; 
+  font-weight: bold; 
+  font-size: large; 
+  margin-bottom: 5px;
+}
+
+.subPara{
+  margin: 0; 
+  text-align: center; 
+  font-size: medium; 
+  margin-bottom: 5px;
+}
+
+hr{
+  margin: 5px;
+}
+
+.container{
+  justify-content: center;
+}
+
+.canvas-title{
+  height: 5vh;
+  width: 35vw;
+  overflow: hidden;
+}
+
+.content {
+  display: grid;
+  text-align: center;
+}
+
+.p1-canvas{
+  height: 60vh;
+  width: 35vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width:none;
+}
+
+.p1-content{
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+}
+
+.p2-canvas{
+  width: 35vw;
+  overflow-x: hidden;
+  scrollbar-width:none;
+}
+
+.p2-btn-container, .p5-btn-container{
+  margin: 2% ; 
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.p2-content, .p4-content, .p5-content, .p7-content{
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+}
