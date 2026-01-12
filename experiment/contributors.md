@@ -1,11 +1,9 @@
-EMPTY
-<!-- Remove all lines above this line before making changes to the file -->
 ### Subject Matter Experts
-| SNo. | Name | Email | Institute | ID |
-| :---: | :---: | :---: | :---: | :---: |
-| 1 | name | email | institute | id |
+| SNo. | Name | Email | Institute |
+| :---: | :---: | :---: | :---: |
+| 1 | Dr. Vignesh Sivaraman | vignesh.cse@itbhu.ac.in | IIT BHU |
 
 ### Developers
-| SNo. | Name | Email | Institute | ID |
-| :---: | :---: | :---: | :---: | :---: |
-| 1 | name | email | institute | id |
+| SNo. | Name | Email | Institute | 
+| :---: | :---: | :---: | :---: |
+| 1 | Ameya Anand Katare | ameya.katare@gmail.com | IIT BHU | 

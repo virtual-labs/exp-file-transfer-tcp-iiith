@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <title>GBN - Sender</title>
+  </head>
+
+  <body class="body">
+    <script src="./js/nav.js" id="navbar-2"></script>
+    <body class="body" style="max-height: 90%;">
+  
+    <button class="btn btn-outline-info" type="button" data-toggle="collapse" data-target="#instruction-data" aria-expanded="false" aria-controls="instruction-data">Instructions</button>
+    </div>
+    <div class="collapse" id="instruction-data" style="margin-top: 2%;">
+        <div class="card card-body">
+            <ul>
+                <li><b><u>Task</u>:</b> Receive ACK for 10 packets by following <b>Go-Back-N</b> Protocol</li>
+                <li><i><b>Move Window</b></i> - Move window position by 1 to right</li>
+                <li><i><b>Re-Send</b></i> - Resend a specific packet</li>
+                <li><i><b>Send New</b></i> - Send the next packet</li>
+            </ul>
+        </div>
+      </div>
+    <div class="content p2-content">
+          <div style="display: flex; flex-direction: column-reverse; justify-content: flex-end;
+    align-items: center;" id="p2-btn-window-container">
+
+            <div style="margin-left: 2%; border: 5px ridge white; padding: 5px; width: 260px; text-align: center; height: fit-content ; font-size: small;">
+              <!-- for window -->
+              <b>Current Window:</b>
+
+              <table>
+                <tr>
+                  <th>Pkt</th>
+                  <th id="pkt1-head">1</th>
+                  <th id="pkt2-head">2</th>
+                  <th id="pkt3-head">3</th>
+                  <th id="pkt4-head">4</th>
+                  <th id="pkt5-head">5</th>
+                  <th id="pkt6-head">6</th>
+                  <th id="pkt7-head">7</th>
+                  <th id="pkt8-head">8</th>
+                  <th id="pkt9-head">9</th>
+                  <th id="pkt10-head">10</th>
+                </tr>
+                <tr>
+                    <td>Sent</td>
+                    <td id="pkt1-sent"></td>
+                    <td id="pkt2-sent"></td>
+                    <td id="pkt3-sent"></td>
+                    <td id="pkt4-sent"></td>
+                    <td id="pkt5-sent"></td>
+                    <td id="pkt6-sent"></td>
+                    <td id="pkt7-sent"></td>
+                    <td id="pkt8-sent"></td>
+                    <td id="pkt9-sent"></td>
+                    <td id="pkt10-sent"></td>
+                </tr>
+                <tr>
+                    <td>ACK</td>
+                    <td id="pkt1-ack"></td>
+                    <td id="pkt2-ack"></td>
+                    <td id="pkt3-ack"></td>
+                    <td id="pkt4-ack"></td>
+                    <td id="pkt5-ack"></td>
+                    <td id="pkt6-ack"></td>
+                    <td id="pkt7-ack"></td>
+                    <td id="pkt8-ack"></td>
+                    <td id="pkt9-ack"></td>
+                    <td id="pkt10-ack"></td>
+                </tr>
+              </table>
+    
+            </div>
+            <div class="p2-btn-container">
+    
+              <div class="p2-btn-div">
+                <button id="move_window" type="button" class="btn-grey "  style="width: 130px;" onclick="p2_buttonPress(0)">Move window</button>
+              </div>
+                <div class="p2-btn-div">
+                  <button id="send_next" type="button" class="btn-green " style="width: 130px;" onclick="p2_buttonPress(1)">Send New</button>
+                </div>
+                <div style="display: flex; flex-direction: row !important;" class="p2-btn-div">
+                  <button id="resend" type="button" class="btn-blue " style="width: 130px;" onclick="p2_buttonPress(2)">Re-Send</button>
+                  <input type="number" id="resend_pkt" min="1" max="10" value="1" style=" width: 50px;">
+              </div>
+            </div>
+          </div>
+        <div style="display: grid; grid-template-columns: 1fr 10fr; width: 420px; overflow-y:scroll; scrollbar-gutter: stable; overflow-x: hidden; height: 65vh; justify-self: center;" class="p2-canvas-container">
+
+          <div id="ray-name" style="flex: 1; display: flex; flex-direction: column;">
+            <div>&nbsp;</div>
+          </div>
+          
+          <div id="canvas" class="p2-canvas">
+            <div id="canvas-title" class="canvas-title"></div>
+            
+            </div>
+        </div>
+        <div id="status-box" style="flex: 1; left: 50%;">
+          <div id="timer" style="width: 100%; height: 30px; font-size: 25px; margin-bottom: 5px; font-family: 'Source Code Pro'; text-align: center;">
+            Time-out in: 
+            --
+          </div>
+
+          <div id="Log-span" style=" width: 100%; ">
+            <h5 style="text-align: center; border-top-right-radius: 20px; border-top-left-radius: 20px; background-color: rgb(160, 212, 255) !important; margin: 0;">Communication log: </h5>
+            <div style="text-align: left; overflow-y: scroll; height:350px; background-color: rgb(160, 212, 255) !important;" class="p2-log">
+              <ol id="log"></ol>
+            </div>
+          </div>
+        </div>
+    </div>
+    <br><br>
+  </body>
+
+  <script src="./js/main.js"></script>
+  <script>window.addEventListener("click",addGraphTitles);</script>
+</html>

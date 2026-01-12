@@ -1,1 +1,1 @@
-### Aim of the experiment
+This module explains the working of **Transmission Control Protocol** in Computer Networks. It is Internet’s transport-layer, connection-oriented, reliable transport protocol.

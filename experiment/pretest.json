@@ -2,38 +2,59 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "Which TCP field is used to ensure ordered data delivery?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Sequence Number",
+        "b": "Acknowledgment Number",
+        "c": "Window Size",
+        "d": "Checksum"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "In TCP congestion control, what happens during the slow-start phase?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "The congestion window increases exponentially.",
+        "b": "The sender stops sending data.",
+        "c": "The congestion window decreases exponentially.",
+        "d": "The sender waits for an explicit congestion signal."
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "How does TCP ensure reliability in data transmission?",
+      "answers": {
+        "a": "By using checksums and acknowledgments.",
+        "b": "By encrypting all packets.",
+        "c": "By sending packets randomly.",
+        "d": "By dropping duplicate packets."
       },
-      "correctAnswer": "c",
+      "correctAnswer": "a",
       "difficulty": "beginner"
+    },
+    {
+      "question": "During TCP connection termination, why does the TIME-WAIT state exist?",
+      "answers": {
+        "a": "To ensure all delayed packets are received.",
+        "b": "To restart the three-way handshake.",
+        "c": "To prevent TCP from being used again.",
+        "d": "To allow connection migration."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which TCP congestion control algorithm reduces the window size exponentially when congestion is detected?",
+      "answers": {
+        "a": "Slow Start",
+        "b": "Additive Increase, Multiplicative Decrease (AIMD)",
+        "c": "Selective Repeat",
+        "d": "Go-Back-N"
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
     }
-  ]
+  ]  
 }
